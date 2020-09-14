@@ -134,20 +134,56 @@ Acá todos los estados posibles son representados con un círculo único. La acc
 
 ### 4.	Construya una máquina de estado finito que modele una máquina expendedora de bebidas que acepta monedas de 5, 10 y 20 centavos. La máquina acepta monedas hasta que se introducen 25 centavos y devuelve cualquier cantidad que supere los 25 céntimos. Entonces, el cliente puede pulsar los botones y elegir una bebida de cola (C), cerveza (Z) o agua (A). 
 
+![Figura 1 4](https://user-images.githubusercontent.com/68835261/93069933-dc733180-f643-11ea-8624-b517ec37d21a.JPG)
+
 Para la elaboración del diagrama de estados para la máquina expendedora de bebidas hemos necesitado de un total de 6 estados, denominados S0, S1, S2, S3, S4 y S5. Donde:
+
 S0 --> 0 ctvs (máquina expendedora de bebidas activa).
+
 S1 --> 5 ctvs.
+
 S2 --> 10 ctvs.
+
 S3 --> 15 ctvs.
+
 S4 --> 20 ctvs.
+
 S5 --> 25 ctvs (Entrega del producto).
 
 Como podemos observar en la figura 1.4 nos encontramos con diferentes combinaciones en lo que respecta al ingreso de las diferentes monedas, es decir, podemos introducir 5 monedas de 5 ctvs. O también se podrían introducir dos monedas de 10 ctvs y una moneda de 5 ctvs. En ambos casos se sumaría un total de 25 ctvs. Y, por ende, se obtendría la bebida que el usuario desee. Sin embargo, también existe la posibilidad de sobrepasar los 25 ctvs, ya que, por ejemplo, se podrían introducir tres monedas de 10 ctvs. O una moneda de 20 ctvs y una de 10 ctvs. En ambos casos, obtendríamos la bebida que se escoja, pero adicional a ello la máquina expendedora también nos devolverá el cambio respectivo. Entonces independientemente de la combinación en la que se introduzcan las monedas, el sistema funcionará correctamente.
+
 Ahora bien, las entradas que hemos utilizado en este diagrama de estados son las combinaciones binarias 00, 01, 10 y 11, las cuales corresponden a las monedas a introducir de 0, 5, 10 y 20 ctvs respectivamente. Y cuyas flechas de transición se han representado por los colores marrón, negro, naranja y azul, respectivamente, con fines de mejor entendimiento. Por otro lado, las flechas de transición de color verde hacen referencia a que el valor acumulado de monedas sobrepasa los 25 ctvs. Por lo que se obtendrá cambio.
+
 Cabe recalcar que, solamente en el estado S5 se entrega la bebida escogida. Y una vez culminada esta acción, se retornará nuevamente al estado S0, para repetir el proceso si el usuario desea otra bebida o si otro usuario acude a la máquina expendedora.
 Para entender de mejor manera el funcionamiento de dicha máquina, postulamos un ejemplo para los siguientes casos:
-### - Inexistencia de cambio
 
+### - Inexistencia de cambio
+No existirá cambio cuando la cantidad de dinero no supere los 25 ctvs. Por ejemplo:
+Si se introducen 5 monedas de 5 ctvs, tenemos las siguientes transiciones: 
+
+- S0 --> S1: Ingreso de la primera moneda. (Cantidad acumulada: 5 ctvs).
+
+- S1 --> S2: Ingreso de la segunda moneda. (Cantidad acumulada: 10 ctvs).
+
+- S2 --> S3: Ingreso de la tercera moneda. (Cantidad acumulada: 15 ctvs).
+
+- S3 --> S4: Ingreso de la cuarta moneda. (Cantidad acumulada: 20 ctvs).
+
+- S4 --> S5: Ingreso de la quinta moneda y entrega del producto. (Cantidad acumulada: 25 ctvs).
+
+### - Existencia de cambio
+Existirá cambio cuando la cantidad de dinero supere los 25 ctvs. Por ejemplo:
+Si se introducen dos monedas de 10 ctvs y una de 20 ctvs, tendríamos las siguientes transiciones:
+
+- S0 --> S2: Ingreso de la primera moneda de 10 ctvs. (Cantidad acumulada: 10 ctvs).
+
+- S2 -> S4: Ingreso de la segunda moneda de 10 ctvs. (Cantidad acumulada: 20 ctvs).
+
+- S4 --> S5: Ingreso de la moneda de 20 ctvs. (Cantidad acumulada: 40 ctvs). Entrega de cambio       y entrega del producto.
+
+Finalmente presentamos a continuación la tabla de transiciones que describe todo el proceso explicado con el diagrama de estados realizado.
+
+![Tabla 1 4](https://user-images.githubusercontent.com/68835261/93070055-03c9fe80-f644-11ea-880b-3934b54673fb.JPG)
 # Bibliografia:
 ## [1]  Yang Sheng, Chen Xikun, Sun Dong y Liu Qinhuang, «Sci-Hub IEEEXplore» 28 de agosto de 2014
 https://sci-hub.tw/https://ieeexplore.ieee.org/document/6885368
