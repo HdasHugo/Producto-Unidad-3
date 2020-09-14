@@ -302,6 +302,8 @@ Por lo tanto, la función lógica implementada nos queda, tal como se observa en
 -	Comparar detalladamente los Datasheet de cada componente que usemos, puesto que, si no lo verificamos, los datos de salida del circuito integrado pueden ser erróneos y esto causará que el funcionamiento del circuito implementado no sea el correcto, incluso pueden ocurrir averías en los mismos, por ello es importante identificar los pines de entrada, salida y de energía, con su respectiva numeración.
 # 11. CRONOGRAMA
 
+![Cronograma](https://user-images.githubusercontent.com/66962449/93119132-e4a09080-f686-11ea-809e-bd1a57454ef3.png)
+
 # 12. BIBLIOGRAFÍA
 ## [1]  Yang Sheng, Chen Xikun, Sun Dong y Liu Qinhuang, «Sci-Hub IEEEXplore» 28 de agosto de 2014
 https://sci-hub.tw/https://ieeexplore.ieee.org/document/6885368
