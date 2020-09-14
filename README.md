@@ -114,7 +114,7 @@ Acá todos los estados posibles son representados con un círculo único. La acc
 
 ![Máquina expendedora de bebidas](https://user-images.githubusercontent.com/68835261/93069802-b2217400-f643-11ea-929e-ea8bbd324622.JPG)
 
-![Circuito de riego automático](https://user-images.githubusercontent.com/68835261/93069811-b483ce00-f643-11ea-9918-8bece3a6687b.JPG)
+![Diagrama 1 4](https://user-images.githubusercontent.com/68835261/93108475-7359e100-f678-11ea-8c5a-0cd10d08bab7.JPG)
 
 # 6. EXPLICACIÓN DEL CÓDIGO FUENTE
 ### 1.	Dibuje el diagrama de estados para la máquina de estado finito cuya tabla de estados es la siguiente. Partiendo del estado s0, calcula la salida para la cadena de entrada 1000110.
@@ -196,7 +196,7 @@ ii.	R: Señal que indica si hay restricciones en el riego (es verano): Hay restr
 iii.	D: Señal que indica si es de día o de noche: Día: D=1; Noche: D=0.
 iv.	V: Señal que indica si el depósito de agua está vacío: Vacío: V=1; Hay agua: V=0.
 ### c)	Y la salida B, que accionará la bomba para regar: Bomba funcionando: B=1; Bomba apagada B=0.
-![Figura 1 5](https://user-images.githubusercontent.com/68835261/93069945-e137e580-f643-11ea-8c19-bd685edd2f90.JPG)
+![Figura 1 51](https://user-images.githubusercontent.com/68835261/93108465-6f2dc380-f678-11ea-9746-440d06f75d12.JPG)
 
 Para la elaboración del diagrama de estados para un sistema de riego automático hemos utilizado un total de 6 estados, denominados V, R, D, N, S, B, donde:
 
@@ -306,4 +306,8 @@ https://sci-hub.tw/https://ieeexplore.ieee.org/document/6305768
 
 # 13. ANEXOS
 ## 13.1. HOJAS TÉCNICAS
+![7404](https://user-images.githubusercontent.com/68835261/93108836-f0855600-f678-11ea-9972-4742bf0987d4.JPG)
 
+![7411](https://user-images.githubusercontent.com/68835261/93108843-f1b68300-f678-11ea-8e6a-7a349dfa197b.JPG)
+
+![7432](https://user-images.githubusercontent.com/68835261/93108851-f3804680-f678-11ea-8fcb-88dd672bdac9.JPG)
