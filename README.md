@@ -57,6 +57,10 @@ Edward Moore escribió un ensayo en 1956 (Gedanken-experiments on Sequential Mac
 Nuestro diagrama previo
 Puedes notar que no importa cuál será el estado de la entrada, la salida solo depende el estado actual contenido dentro del elemento de la memoria.
 
+### Diagrama de estado
+
+![DEMoore](https://user-images.githubusercontent.com/68835261/93109551-d4ce7f80-f679-11ea-8a04-cfdc9f60fe31.JPG)
+
 ## Máquina de estado Mealy
 
 George Mealy escribió un ensayo un año antes que Moore, titulado “A Method for Synthesizing Sequential Circuits”,  en el cual entra en profundidad acerca de crear máquinas de estado desde funciones matemáticas, y describe esas salidas de máquinas de estado en términos de sus entradas.
@@ -69,7 +73,9 @@ También puede ser dibujado separando la nube en la lógica del próximo estado 
  
  ![5](https://user-images.githubusercontent.com/66962449/93040967-f21b3380-f610-11ea-802c-a3ca1b2db717.jpg)
  
-Otra forma de dibujar una máquina Mealy
+### Diagrama de estado
+
+![DEMealy](https://user-images.githubusercontent.com/68835261/93109555-d5ffac80-f679-11ea-9aa7-c5ecbd1bc3e0.JPG)
 
 ## Diagramas de Estado Abstractos
 
