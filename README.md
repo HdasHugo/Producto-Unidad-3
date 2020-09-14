@@ -309,6 +309,10 @@ https://sci-hub.tw/https://ieeexplore.ieee.org/document/6885368
 https://sci-hub.tw/https://ieeexplore.ieee.org/document/7025478 
 ## [3] S. Wu, «Sci-Hub IEEEXplore»    20 de septiembre de 2012
 https://sci-hub.tw/https://ieeexplore.ieee.org/document/6305768 
+## Anonimo 18 de junio 2019 obtenido de MCI capacitación :
+https://cursos.mcielectronics.cl/2019/06/18/maquinas-de-estado/
+## Pablo Turmero obtenido de Monografias:
+https://www.monografias.com/docs114/maquinas-estado/maquinas-estado.shtml
 
 # 13. ANEXOS
 ## 13.1. HOJAS TÉCNICAS
