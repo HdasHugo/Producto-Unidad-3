@@ -183,8 +183,104 @@ Si se introducen dos monedas de 10 ctvs y una de 20 ctvs, tendríamos las siguie
 
 Finalmente presentamos a continuación la tabla de transiciones que describe todo el proceso explicado con el diagrama de estados realizado.
 
-![Tabla 1 4](https://user-images.githubusercontent.com/68835261/93070055-03c9fe80-f644-11ea-880b-3934b54673fb.JPG)
-# Bibliografia:
+![Tabla 1 41](https://user-images.githubusercontent.com/68835261/93072473-1134b800-f647-11ea-8456-f35da550a69a.JPG)
+
+### 5.	Construya una máquina de estados finito que modele un circuito de riego automático como el mostrado en la figura. El circuito deberá accionar la bomba en las siguientes condiciones:
+### a)	El circuito accionará la bomba solamente cuando la tierra esté seca, pero antes debe comprobar las siguientes condiciones:
+i.	Para evitar que la bomba se estropee por funcionar en vacío, nunca se accionará la bomba cuando el depósito de agua esté vacío.
+ii.	Si hay restricciones en el riego (época de verano), sólo se podrá regar de noche.
+iii.	En el resto del año (si no hay restricciones) se podrá regar de día y de noche (si la tierra está seca).
+### b)	Para la implementación del circuito se dispone de las siguientes entradas:
+i.	S: Señal que indica si la tierra está seca: Tierra seca: S=1; Tierra húmeda: S=0
+ii.	R: Señal que indica si hay restricciones en el riego (es verano): Hay restricciones: R=1. No hay restricciones: R=0.
+iii.	D: Señal que indica si es de día o de noche: Día: D=1; Noche: D=0.
+iv.	V: Señal que indica si el depósito de agua está vacío: Vacío: V=1; Hay agua: V=0.
+### c)	Y la salida B, que accionará la bomba para regar: Bomba funcionando: B=1; Bomba apagada B=0.
+![Figura 1 5](https://user-images.githubusercontent.com/68835261/93069945-e137e580-f643-11ea-8c19-bd685edd2f90.JPG)
+
+Para la elaboración del diagrama de estados para un sistema de riego automático hemos utilizado un total de 6 estados, denominados V, R, D, N, S, B, donde:
+
+V --> Depósito de agua lleno o vacío.
+
+R --> Existencia de restricción (Época de verano o no).
+
+D --> Estado que indica si es de día.
+
+N --> Estado que indica si es de noche.
+
+S --> Estado que indica si la tierra está seca o no.
+
+B --> Estado final (Bomba de agua activada).
+
+Como podemos observar en la figura 1.4 nos encontramos con una variable de entrada que puede tomar el valor de 1 o 0 lógico, cuyo valor influenciará en la transición de cada uno de los estados. Como sabemos la bomba se accionará siempre y cuando la tierra esté seca y es por ello que los dos estados que representan a estas condiciones se encuentran al último de nuestro diagrama, sin embargo, se deben cumplir los demás requisitos que nos estipula la problemática del enunciado, y es por ello que el estado V es el inicial, ya que necesitamos que el depósito de agua se encuentre lleno para seguir con el resto del proceso, entonces, si el estado V recibe un valor de 1 lógico, tenemos que el sistema permanecerá en el mismo estado, caso contrario pasaremos al estado R, el cual determinará si existe restricción (es verano) o no. En el caso de no existir restricción, pasaremos al estado D (es de día). Caso contrario pasaremos al estado N.
+Una vez que pasamos de R a D y este último reciba un valor de 1, entonces pasaremos al estado S. De no ser así, se entiende que es de noche y pasaremos al estado N, que por consiguiente pasará al estado S.
+
+Por otro lado, si pasamos de R a N y este último recibe un valor de 1, entonces pasaremos al estado S. Caso contrario regresaremos de N a R, de esta manera nos cercioramos que solo se riegue en la noche, ya que nos encontramos en época de verano.
+
+Finalmente, el estado S es el que determinará si se va a activar o no la bomba de agua. Entonces si la tierra está seca pasaremos al estado B, el cual representa que el sistema de riego funciona en ese momento. Caso contrario, tendríamos que la tierra no está seca, por consiguiente, regresaríamos nuevamente el estado R y se repetiría el proceso hasta que la tierra esté seca.
+Una vez que se culmine el proceso de riego, el sistema se reiniciará, pasando del estado B al estado inicial V.
+
+Para entender de mejor manera, postulamos los siguientes ejemplos:
+### -	Suponiendo que el depósito de agua está lleno, la tierra está seca, no es época de verano y es de día, la transición de estados se vería de la siguiente manera:
+- V --> R: Tanque de agua lleno.
+- R --> D: No es época de verano.
+- D --> S: Es de día.
+- S --> B: La tierra está seca. (Se activa la bomba de agua).
+
+### -	Suponiendo que el depósito de agua está lleno, la tierra está seca, no es época de verano y es de noche, la transición de estados se vería de la siguiente manera:
+- V --> R: Tanque de agua lleno.
+- R --> D: No es época de verano.
+- D --> N: No es de día.
+- N --> S: Es de noche.
+- S --> B: La tierra está seca. (Se activa la bomba de agua).
+
+### -	Suponiendo que el depósito de agua está lleno, la tierra está seca, es época de verano y es de día, la transición de estados se vería de la siguiente manera:
+- V --> R: Tanque de agua lleno.
+- R --> N: Es época de verano.
+- N --> R: No es de noche (Regresa al estado R para verificar si es época de verano o no). 
+
+### -	Suponiendo que el depósito de agua está lleno, la tierra está seca, es época de verano y es de noche, la transición de estados se vería de la siguiente manera:
+- V --> R: Tanque de agua lleno.
+- R --> N: Es época de verano.
+- N --> S: Es de noche.
+- S --> B: La tierra está seca. (Se activa la boba de agua).
+
+Finalmente presentamos a continuación la tabla de transiciones que describe todo el proceso explicado con el diagrama de estados realizado. 
+
+![Tabla 1 5](https://user-images.githubusercontent.com/68835261/93070064-075d8580-f644-11ea-91e4-945785692f5f.JPG)
+![Tabla 1 6](https://user-images.githubusercontent.com/68835261/93070075-0af10c80-f644-11ea-992a-79cf18997c5b.JPG)
+
+# 7. DESCRIPCIÓ DE PRERREQUISITOS Y CONFIGURACIÓN
+En lo que corresponde a la utilización de aplicaciones secundarias para elaborar los diferentes grafos de estado, podemos decir que no se ha necesitado de ninguna que influya directamente sobre su implementación, ya que Creately ofrece una interfaz de desarrollo de diagramas muy extenso y completo. 
+
+Ahora bien, necesitamos saber cuales son los pasos para poder implementar diagramas de estados en Creately. Para lo cual, debemos:
+
+1.	Seleccionar en la sección de formas, todos los elementos o figuras que se utilizarán en el circuito, (En nuestro caso seleccionaremos el círculo). Y arrastrarlo a la hoja de trabajo.
+![DP1](https://user-images.githubusercontent.com/68835261/93069953-e432d600-f643-11ea-9569-42575dc9cccb.JPG)
+2.	Conectar todas las formas (Estados) mediante un conector.
+![DP2](https://user-images.githubusercontent.com/68835261/93069964-e72dc680-f643-11ea-9599-191d08aceb05.JPG)
+3.	Una vez que ya se ha realizado la conexión entre los estados procedemos a dar clic en el conector y se nos desplegará un recuadro con opciones, en el cual podemos escoger la dirección del conector representado por una flecha, cambiar de color, colocar texto y cambiar la forma del conector.
+![DP3](https://user-images.githubusercontent.com/68835261/93069970-e9902080-f643-11ea-96e4-3d63ec71f17f.JPG)
+4.	Finalmente, el diagrama de estados terminado quedaría de la siguiente manera:
+![DP4](https://user-images.githubusercontent.com/68835261/93069976-ebf27a80-f643-11ea-9ae7-1ba3ac7c0bc4.JPG)
+
+# 8. APORTACIONES
+### Implementación de sistema de riego automático en un circuito lógico
+El procedimiento que se llevó a cabo para representar e implementar el sistema de riego automático en un circuito lógico fue el realizar la tabla de verdad con las 4 variables de entrada V, S, D y R (Tabla 1.7), simplificar mediante mapas de Karnaugh y obtener la función lógica resultante (Figura 1.6).
+![Tabla 1 7](https://user-images.githubusercontent.com/68835261/93070096-0f1d2a00-f644-11ea-89de-cdee5dd2c7d5.JPG)
+![Figura 1 6](https://user-images.githubusercontent.com/68835261/93070113-13e1de00-f644-11ea-89be-1a761336ed9e.JPG)
+
+Por lo tanto, la función lógica implementada nos queda, tal como se observa en la sección derecha de la figura 1.7 
+![Figura 1 7](https://user-images.githubusercontent.com/68835261/93070127-16dcce80-f644-11ea-82c4-917590d0329d.JPG)
+![Figura 1 8](https://user-images.githubusercontent.com/68835261/93070133-1a705580-f644-11ea-8379-f49c43779e27.JPG)
+
+# 9. CONCLUSIONES
+
+# 10. RECOMENDACIOINES
+
+# 11. CRONOGRAMA
+
+# 12. BIBLIOGRAFÍA
 ## [1]  Yang Sheng, Chen Xikun, Sun Dong y Liu Qinhuang, «Sci-Hub IEEEXplore» 28 de agosto de 2014
 https://sci-hub.tw/https://ieeexplore.ieee.org/document/6885368
 ## [2] J. Kim y D. Kim , «Sci-Hub IEEEXplore»   29 de enero de 2015
