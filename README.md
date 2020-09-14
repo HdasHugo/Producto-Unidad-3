@@ -282,9 +282,18 @@ Por lo tanto, la función lógica implementada nos queda, tal como se observa en
 ![Figura 1 8](https://user-images.githubusercontent.com/68835261/93070133-1a705580-f644-11ea-8379-f49c43779e27.JPG)
 
 # 9. CONCLUSIONES
+-	Los diagramas de estado, para el primer y segundo ejercicio, se han diseñado, partiendo de la tabla de estados proporcionadas, mientras que en el tercer ejercicio se implementó la tabla de estados partiendo de un diagrama de estados. Toda su realización fue de gran importancia para aplicar el mismo principio en una máquina expendedora de bebidas y en un sistema de riego automático, donde cada uno de sus estados se representaron en base a los requerimientos de cada problema. Si nos damos cuenta, se utilizaron un total de 6 estados en los dos casos, cuyas transiciones, dependieron de la moneda que se inserte en la máquina expendedora y de las diferentes condiciones que se requerían para que la bomba de agua se active en el sistema de riego.
+
+-	Al realizar cada diagrama y tabla de estado podemos deducir que todos están relacionados con una máquina de Mealy, ya que las variables de entradas y salidas se encuentras en las transiciones (conectores) que claramente dependen a su vez del estado en el que se encuentren, en otras palabras, la salida depende de la condición de entrada que debe existir y del estado en el que se encuentre en ese momento.
+
+-	El diseño de cada circuito se la realizó en base a todo lo investigado, lo cual tiene que ver con las funcionalidades que ofrecen los diagramas y tablas de estado para aplicarlos en circuitos lógicos secuenciales. Cabe mencionar que esto es la base de una gran cantidad de aplicaciones en lo que respecta a sistemas digitales, ya que tienen una amplia relevancia e importancia. Sin duda los diagramas de estado, son la base para implementar un sinnúmero de aplicaciones, pues han sido muy importantes en el avance de la electrónica y de la tecnología. Lo más esencial para nosotros es conocer cómo es su funcionamiento (interacción entre estados y variables de entrada) y mediante esta práctica se ha cumplido este objetivo. De hecho, al momento de realizar la investigación con los artículos de los autores investigados, podemos darnos cuenta de la gran cantidad de aplicaciones que tienen y que de cierta manera se relaciona con nuestro proyecto en cuestión.
 
 # 10. RECOMENDACIOINES
+-	Se recomienda realizar la investigación única y exclusivamente de los temas a ser tratados durante la ejecución y realización del informe que a su vez sustenten los fundamentos para el diseño e implementación del circuito. 
 
+-	Cerciorarse que la transición entre los diferentes estados del sistema, junto con las entradas sea la correcta para evitar fallos en las salidas.
+
+-	Comparar detalladamente los Datasheet de cada componente que usemos, puesto que, si no lo verificamos, los datos de salida del circuito integrado pueden ser erróneos y esto causará que el funcionamiento del circuito implementado no sea el correcto, incluso pueden ocurrir averías en los mismos, por ello es importante identificar los pines de entrada, salida y de energía, con su respectiva numeración.
 # 11. CRONOGRAMA
 
 # 12. BIBLIOGRAFÍA
@@ -294,3 +303,7 @@ https://sci-hub.tw/https://ieeexplore.ieee.org/document/6885368
 https://sci-hub.tw/https://ieeexplore.ieee.org/document/7025478 
 ## [3] S. Wu, «Sci-Hub IEEEXplore»    20 de septiembre de 2012
 https://sci-hub.tw/https://ieeexplore.ieee.org/document/6305768 
+
+# 13. ANEXOS
+## 13.1. HOJAS TÉCNICAS
+
