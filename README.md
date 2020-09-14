@@ -10,28 +10,27 @@ Diseñar diagramas de estado a partir de sus respectivas tablas y viceversa comp
 -	Investigar la funcionalidad y la composición de un circuito lógico secuencial, haciendo énfasis principalmente en las diferentes máquinas de estado que pueden aplicarse en el diseño de un circuito a partir de una problemática o necesidad, de tal manera que funcione de manera automática.
 -	Buscar artículos relacionados a la problemática de resolver o diseñar diferentes circuitos, mediante el uso de diagramas y tablas de estado y comparar cuál es su relación con el proyecto a realizar en este producto de unidad.
 -	Desarrollar el proceso en el que se realicen los grafos de estado junto con sus tablas de verdad, cuya fundamentación, en cuestión, esté relacionada con las diferentes máquinas de estado existentes.
-# 3. Estado del arte
-# Diseño del sistema de diagnóstico de fallas del paquete de baterías de litio basado en una máquina de estado de dos niveles.
-
+# 3. ESTADO DEL ARTE
+## Diseño del sistema de diagnóstico de fallas del paquete de baterías de litio basado en una máquina de estado de dos niveles.
 En este documento se analiza el diseño de un sistema útil, que se utiliza para monitorear el estado del paquete de baterías de litio y diagnosticar su falla. Este sistema se implementó mediante la adopción creativa de una máquina de estado de dos niveles. Los fallos que puede producir el paquete de baterías de litio de potencia se utilizaron para definir el estado de la máquina de estados finitos. La máquina de estado de dos etapas se utilizó para registrar y reportar todo tipo de información de fallas, mientras que la máquina de estado de una etapa se utilizó para determinar la salida final del sistema. Este sistema se comunicaba con la PC a través de CAN y proporcionaba mucha información importante para el sistema de gestión de la batería. Los experimentos muestran que este sistema puede juzgar el tipo de falla y el nivel de falla de manera eficiente y precisa y también puede tomar medidas de protección a tiempo.
 
-# Clasificación de regiones estáticas utilizando una máquina de estado finito jerárquica
-
+## Clasificación de regiones estáticas utilizando una máquina de estado finito jerárquica
 En este artículo se nos presenta sobre la capacidad de la mayoría de los enfoques existentes para clasificar regiones estáticas, como objetos abandonados y retirados en imágenes, se ve afectada por la iluminación y el volumen de tráfico debido a varios valores de umbral predefinidos. Para reducir estos efectos, proponemos un método de clasificación de regiones estáticas preciso utilizando una máquina jerárquica de estados finitos que consta de tres capas. Cada FSM está definido por una máquina de estado de Mealy, donde una máquina de vectores de soporte (SVM) determina la transición de estado según el estado actual y las características de entrada. Debido a que el método propuesto utiliza clasificadores de SVM entrenados de manera óptima, no requiere valores de umbral y garantiza una mejor precisión de clasificación bajo cambios ambientales severos. 
 
-# Implementación de transiciones de estados de animación en escenas interactivas basadas en una máquina gráfica de estados finitos
-
+## Implementación de transiciones de estados de animación en escenas interactivas basadas en una máquina gráfica de estados finitos
 Este artículo habla sobre el uso de funciones gráficas para probar la máquina de estados finitos que conecta clips de movimiento y finalmente implementar la animación interactiva de personajes. Estos enfoques no solo facilitan la investigación de la reutilización de datos de animación y el autocontrol del movimiento de los personajes, sino que también llevan a cabo herramientas de transferencia gráfica de estados de caracteres que pueden probar e implementar la máquina de estados finitos de la animación interactiva.
-# 4. Marco Teorico
-# Maquina de Estados
+
+# 4. MARCO TEÓRICO
+## Máquina de estados
 Un ‘estado’ es la condición de una cosa en un tiempo determinado. Algunos que pueden realizar tareas y que utilizan estados como su núcleo son máquinas de estado. También son conocidas como máquinas de estado finitas, lo que significa que sabemos todos los posibles estados de ella. La clave para la máquina de estado es el concepto del tiempo y la historia. El estado de la máquina es evaluada periódicamente. Cada vez que es evaluada, un nuevo estado es elegido (el que podría ser el mismo estado nuevamente) y el resultado es presentado.
-# Una máquina de estado genérica:
+
+## Una máquina de estado genérica:
 
  ![1](https://user-images.githubusercontent.com/66962449/93040932-d57efb80-f610-11ea-88b5-569ee8458422.jpg)
  
 Un diagrama de una máquina de estado genérica. El elemento de memoria  contiene el nuevo estado conocido como el estado variable. Cuando la máquina de estado cuenta con los servicios, el estado variable es actualizado con el valor de la próxima etapa. Acá lanueva etapa es una función de ambos; el estado actual y algunos inputs. La nube de la lógica es un sistema que decide cual será el próximo estado, o la próxima lógica de estado. 
 
-# Una máquina de estado simple: El contador.
+## Una máquina de estado simple: El contador.
 
 Un clásico ejemplo de una máquina de estado es un contador. Por ejemplo, un ‘for loop’ o un circuito integrado lógico de 74×4040 trabajan como una máquina de estado. Cada vez que la máquina cambia de estado, ya sea por la línea del reloj o por el comportamiento de bucle, el estado de la memoria cambia a un nuevo estado igualando el estado anterior más uno. El set finito de estados que puede tener es la cantidad de números que puede contar.
  
@@ -45,11 +44,11 @@ Partes de la máquina de estado del contador:
 •	No hay entradas. En un diagrama más avanzado, una entrada o una función de reseteo del contador será establecido como entrada.
 La máquina de estado avanza a cualquier ritmo que sea atendida.
 
-# Máquinas de Estado Moore y Mealy
+## Máquinas de Estado Moore y Mealy
 
 Los profesores de lógica digital aman preguntar en las pruebas sobre Moore vs. Mealy y es por eso que tenemos que mencionarlo. La distinción entre ellas muchas veces no hace sentido, mientras escribas en una maquina de estado en C; es más como una: distinción de “como hacer un hardware lógico”. Para nosotros la lección de Moore y Mealy es que existió gente que pensó sobre este tipo de cosas e inventó formas de notarlo. Mientras ellos se centraban en el hardware lógico, nosotros nos centraremos en el software c.
 
-# Máquina de estado Moore
+## Máquina de estado Moore
 
 Edward Moore escribió un ensayo en 1956 (Gedanken-experiments on Sequential Machines) y por lo tanto el estilo de la máquina lleva su nombre.  El dice que la salida depende solo del estado, y el próximo estado es dependiente del estado actual (o salida), y la entrada.
  
@@ -58,7 +57,7 @@ Edward Moore escribió un ensayo en 1956 (Gedanken-experiments on Sequential Mac
 Nuestro diagrama previo
 Puedes notar que no importa cuál será el estado de la entrada, la salida solo depende el estado actual contenido dentro del elemento de la memoria.
 
-# Máquina de estado Mealy
+## Máquina de estado Mealy
 
 George Mealy escribió un ensayo un año antes que Moore, titulado “A Method for Synthesizing Sequential Circuits”,  en el cual entra en profundidad acerca de crear máquinas de estado desde funciones matemáticas, y describe esas salidas de máquinas de estado en términos de sus entradas.
 Para diagramar la máquina Mealy, la salida está hecha para depender de ambos: el estado actual y la entrada. Aquí la nube de la lógica de la próxima etapa contiene la lógica de salida también:
@@ -72,7 +71,7 @@ También puede ser dibujado separando la nube en la lógica del próximo estado 
  
 Otra forma de dibujar una máquina Mealy
 
-# Diagramas de Estado Abstractos
+## Diagramas de Estado Abstractos
 
 Hasta ahora, hemos visto que las máquinas de estado tienen una memoria que almacena el estado actual, que debe provenir de algún estado, y que irá al siguiente estado. Aunque nuestro diagrama actual no muestra como se mueve a través de estados, el propósito debiese ser dibujar un mapa de movimiento entre los estados para que podamos escribir un código que emule nuestro diseño. Esto se llama diagrama de estado.
 Este es un ejemplo de cómo se pueden diagramar los estados de una máquina de estado, usando ideas de Moore y Mealy.
@@ -104,8 +103,12 @@ Revisa el comportamiento del contador como se dibuja con un diagrama de estado.
  
  ![9](https://user-images.githubusercontent.com/66962449/93041247-b16fea00-f611-11ea-844f-41e2c200732d.jpg)
  
-# Diagrama de estado de un contador simple
+## Diagrama de estado de un contador simple
 Acá todos los estados posibles son representados con un círculo único. La acción del estado es agregar uno. Para determinar el próximo estado, es fácil ver que sólo tenemos una opción, que es regresar al estado en que estábamos.
+
+# 5. DIAGRAMAS
+## 5.1. DIAGRAMAS DE ESTADO
+
 
 # Bibliografia:
 ## [1]  Yang Sheng, Chen Xikun, Sun Dong y Liu Qinhuang, «Sci-Hub IEEEXplore» 28 de agosto de 2014
