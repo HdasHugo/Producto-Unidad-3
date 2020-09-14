@@ -108,7 +108,45 @@ Acá todos los estados posibles son representados con un círculo único. La acc
 
 # 5. DIAGRAMAS
 ## 5.1. DIAGRAMAS DE ESTADO
+![Diagrama 1 1](https://user-images.githubusercontent.com/68835261/93069737-a2a22b00-f643-11ea-8b5e-730e7e6dc2fb.JPG)
 
+![Diagrama 1 2](https://user-images.githubusercontent.com/68835261/93069740-a3d35800-f643-11ea-9181-71be2ca47510.JPG)
+
+![Máquina expendedora de bebidas](https://user-images.githubusercontent.com/68835261/93069802-b2217400-f643-11ea-929e-ea8bbd324622.JPG)
+
+![Circuito de riego automático](https://user-images.githubusercontent.com/68835261/93069811-b483ce00-f643-11ea-9918-8bece3a6687b.JPG)
+
+# 6. EXPLICACIÓN DEL CÓDIGO FUENTE
+### 1.	Dibuje el diagrama de estados para la máquina de estado finito cuya tabla de estados es la siguiente. Partiendo del estado s0, calcula la salida para la cadena de entrada 1000110.
+![Tabla 1 1](https://user-images.githubusercontent.com/68835261/93070025-fa409680-f643-11ea-85b6-3e8a18ee6b11.JPG)
+
+![Figura 1 1](https://user-images.githubusercontent.com/68835261/93069903-d0876f80-f643-11ea-9b59-ef8ceaf5e2db.JPG)
+
+### 2.	Dibuje el diagrama de estados para la máquina de estado finito cuya tabla de estados es la siguiente. Partiendo del estado inicial s0, calcula la salida para la cadena de entrada abbccc
+![Tabla 1 2](https://user-images.githubusercontent.com/68835261/93070035-fdd41d80-f643-11ea-9006-2dbeb73e50cd.JPG)
+
+![Figura 1 2](https://user-images.githubusercontent.com/68835261/93069914-d3826000-f643-11ea-9dd0-e8d3109e18b3.JPG)
+
+### 3.	Halle la tabla de estados para la máquina de estado finito cuyo diagrama de estados es:
+![Figura 1 3](https://user-images.githubusercontent.com/68835261/93069919-d67d5080-f643-11ea-98b8-6928c7d0957a.JPG)
+
+![Tabla 1 3](https://user-images.githubusercontent.com/68835261/93070043-00cf0e00-f644-11ea-86a4-e473cb53e43a.JPG)
+
+### 4.	Construya una máquina de estado finito que modele una máquina expendedora de bebidas que acepta monedas de 5, 10 y 20 centavos. La máquina acepta monedas hasta que se introducen 25 centavos y devuelve cualquier cantidad que supere los 25 céntimos. Entonces, el cliente puede pulsar los botones y elegir una bebida de cola (C), cerveza (Z) o agua (A). 
+
+Para la elaboración del diagrama de estados para la máquina expendedora de bebidas hemos necesitado de un total de 6 estados, denominados S0, S1, S2, S3, S4 y S5. Donde:
+S0 --> 0 ctvs (máquina expendedora de bebidas activa).
+S1 --> 5 ctvs.
+S2 --> 10 ctvs.
+S3 --> 15 ctvs.
+S4 --> 20 ctvs.
+S5 --> 25 ctvs (Entrega del producto).
+
+Como podemos observar en la figura 1.4 nos encontramos con diferentes combinaciones en lo que respecta al ingreso de las diferentes monedas, es decir, podemos introducir 5 monedas de 5 ctvs. O también se podrían introducir dos monedas de 10 ctvs y una moneda de 5 ctvs. En ambos casos se sumaría un total de 25 ctvs. Y, por ende, se obtendría la bebida que el usuario desee. Sin embargo, también existe la posibilidad de sobrepasar los 25 ctvs, ya que, por ejemplo, se podrían introducir tres monedas de 10 ctvs. O una moneda de 20 ctvs y una de 10 ctvs. En ambos casos, obtendríamos la bebida que se escoja, pero adicional a ello la máquina expendedora también nos devolverá el cambio respectivo. Entonces independientemente de la combinación en la que se introduzcan las monedas, el sistema funcionará correctamente.
+Ahora bien, las entradas que hemos utilizado en este diagrama de estados son las combinaciones binarias 00, 01, 10 y 11, las cuales corresponden a las monedas a introducir de 0, 5, 10 y 20 ctvs respectivamente. Y cuyas flechas de transición se han representado por los colores marrón, negro, naranja y azul, respectivamente, con fines de mejor entendimiento. Por otro lado, las flechas de transición de color verde hacen referencia a que el valor acumulado de monedas sobrepasa los 25 ctvs. Por lo que se obtendrá cambio.
+Cabe recalcar que, solamente en el estado S5 se entrega la bebida escogida. Y una vez culminada esta acción, se retornará nuevamente al estado S0, para repetir el proceso si el usuario desea otra bebida o si otro usuario acude a la máquina expendedora.
+Para entender de mejor manera el funcionamiento de dicha máquina, postulamos un ejemplo para los siguientes casos:
+### - Inexistencia de cambio
 
 # Bibliografia:
 ## [1]  Yang Sheng, Chen Xikun, Sun Dong y Liu Qinhuang, «Sci-Hub IEEEXplore» 28 de agosto de 2014
