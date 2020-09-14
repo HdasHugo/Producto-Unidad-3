@@ -256,12 +256,19 @@ En lo que corresponde a la utilización de aplicaciones secundarias para elabora
 Ahora bien, necesitamos saber cuales son los pasos para poder implementar diagramas de estados en Creately. Para lo cual, debemos:
 
 1.	Seleccionar en la sección de formas, todos los elementos o figuras que se utilizarán en el circuito, (En nuestro caso seleccionaremos el círculo). Y arrastrarlo a la hoja de trabajo.
+
 ![DP1](https://user-images.githubusercontent.com/68835261/93069953-e432d600-f643-11ea-9569-42575dc9cccb.JPG)
+
 2.	Conectar todas las formas (Estados) mediante un conector.
+
 ![DP2](https://user-images.githubusercontent.com/68835261/93069964-e72dc680-f643-11ea-9599-191d08aceb05.JPG)
+
 3.	Una vez que ya se ha realizado la conexión entre los estados procedemos a dar clic en el conector y se nos desplegará un recuadro con opciones, en el cual podemos escoger la dirección del conector representado por una flecha, cambiar de color, colocar texto y cambiar la forma del conector.
+
 ![DP3](https://user-images.githubusercontent.com/68835261/93069970-e9902080-f643-11ea-96e4-3d63ec71f17f.JPG)
+
 4.	Finalmente, el diagrama de estados terminado quedaría de la siguiente manera:
+
 ![DP4](https://user-images.githubusercontent.com/68835261/93069976-ebf27a80-f643-11ea-9ae7-1ba3ac7c0bc4.JPG)
 
 # 8. APORTACIONES
