@@ -246,7 +246,7 @@ En este caso tampoco tiene relevancia la restricción.
 
 Finalmente presentamos a continuación la tabla de transiciones que describe todo el proceso explicado con el diagrama de estados realizado. 
 
-![Tabla 1 5](https://user-images.githubusercontent.com/68835261/93070064-075d8580-f644-11ea-91e4-945785692f5f.JPG)
+![Tabla 1 51](https://user-images.githubusercontent.com/68835261/93184556-01c67500-f702-11ea-8933-1211c5afe147.JPG)
 
 # 7. DESCRIPCIÓN DE PRERREQUISITOS Y CONFIGURACIÓN
 En lo que corresponde a la utilización de aplicaciones secundarias para elaborar los diferentes grafos de estado, podemos decir que no se ha necesitado de ninguna que influya directamente sobre su implementación, ya que Creately ofrece una interfaz de desarrollo de diagramas muy extenso y completo. 
