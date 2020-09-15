@@ -120,7 +120,7 @@ Acá todos los estados posibles son representados con un círculo único. La acc
 
 ![Máquina expendedora de bebidas](https://user-images.githubusercontent.com/68835261/93069802-b2217400-f643-11ea-929e-ea8bbd324622.JPG)
 
-![Diagrama 1 4](https://user-images.githubusercontent.com/68835261/93108475-7359e100-f678-11ea-8c5a-0cd10d08bab7.JPG)
+![Diagrama 1 41](https://user-images.githubusercontent.com/68835261/93180664-1f451000-f6fd-11ea-960b-aae51d8cbe54.JPG)
 
 # 6. EXPLICACIÓN DEL CÓDIGO FUENTE
 ### 1.	Dibuje el diagrama de estados para la máquina de estado finito cuya tabla de estados es la siguiente. Partiendo del estado s0, calcula la salida para la cadena de entrada 1000110.
@@ -202,61 +202,53 @@ ii.	R: Señal que indica si hay restricciones en el riego (es verano): Hay restr
 iii.	D: Señal que indica si es de día o de noche: Día: D=1; Noche: D=0.
 iv.	V: Señal que indica si el depósito de agua está vacío: Vacío: V=1; Hay agua: V=0.
 ### c)	Y la salida B, que accionará la bomba para regar: Bomba funcionando: B=1; Bomba apagada B=0.
-![Figura 1 51](https://user-images.githubusercontent.com/68835261/93108465-6f2dc380-f678-11ea-9746-440d06f75d12.JPG)
+![FIgura 1 52](https://user-images.githubusercontent.com/68835261/93180716-2ff58600-f6fd-11ea-87ff-c5dda0a390df.JPG)
 
-Para la elaboración del diagrama de estados para un sistema de riego automático hemos utilizado un total de 6 estados, denominados V, R, D, N, S, B, donde:
+Para la elaboración del diagrama de estados para un sistema de riego automático hemos utilizado un total de 4 estados, denominados V, S, D, R, donde:
 
 V --> Depósito de agua lleno o vacío.
 
-R --> Existencia de restricción (Época de verano o no).
+S --> Estado que indica si la tierra está seca o no.
 
 D --> Estado que indica si es de día.
 
-N --> Estado que indica si es de noche.
+R --> Existencia de restricción (Época de verano o no).
 
-S --> Estado que indica si la tierra está seca o no.
-
-B --> Estado final (Bomba de agua activada).
-
-Como podemos observar en la figura 1.4 nos encontramos con una variable de entrada que puede tomar el valor de 1 o 0 lógico, cuyo valor influenciará en la transición de cada uno de los estados. Como sabemos la bomba se accionará siempre y cuando la tierra esté seca y es por ello que los dos estados que representan a estas condiciones se encuentran al último de nuestro diagrama, sin embargo, se deben cumplir los demás requisitos que nos estipula la problemática del enunciado, y es por ello que el estado V es el inicial, ya que necesitamos que el depósito de agua se encuentre lleno para seguir con el resto del proceso, entonces, si el estado V recibe un valor de 1 lógico, tenemos que el sistema permanecerá en el mismo estado, caso contrario pasaremos al estado R, el cual determinará si existe restricción (es verano) o no. En el caso de no existir restricción, pasaremos al estado D (es de día). Caso contrario pasaremos al estado N.
-Una vez que pasamos de R a D y este último reciba un valor de 1, entonces pasaremos al estado S. De no ser así, se entiende que es de noche y pasaremos al estado N, que por consiguiente pasará al estado S.
-
-Por otro lado, si pasamos de R a N y este último recibe un valor de 1, entonces pasaremos al estado S. Caso contrario regresaremos de N a R, de esta manera nos cercioramos que solo se riegue en la noche, ya que nos encontramos en época de verano.
-
-Finalmente, el estado S es el que determinará si se va a activar o no la bomba de agua. Entonces si la tierra está seca pasaremos al estado B, el cual representa que el sistema de riego funciona en ese momento. Caso contrario, tendríamos que la tierra no está seca, por consiguiente, regresaríamos nuevamente el estado R y se repetiría el proceso hasta que la tierra esté seca.
-Una vez que se culmine el proceso de riego, el sistema se reiniciará, pasando del estado B al estado inicial V.
+Como podemos observar en la figura 1.5 nos encontramos con una variable de entrada que puede tomar el valor de 1 o 0 lógico, cuyo valor influenciará en la transición de cada uno de los estados. Como sabemos la bomba se accionará siempre y cuando el depósito de agua no esté vacío y la tierra esté seca, además se deben cumplir los demás requisitos que nos estipula la problemática del enunciado, es por ello que el estado V es el inicial, ya que necesitamos que el depósito de agua se encuentre lleno para seguir con el resto del proceso, entonces, si el estado V recibe un valor de 1 lógico, tenemos que el sistema permanecerá en el mismo estado, caso contrario pasaremos al estado S, el cual determinará si la tierra está seca o no. En el caso que la tierra si esté seca, pasaremos al estado D (es de día). Caso contrario el sistema permanecerá en el mismo estado S.
+Una vez que pasamos de S a D y este último reciba un valor de 1, entonces pasaremos al estado R para verificar si existe o no resitricción. En caso que si exista restricción, regresaremos al estado D, ya que no se puede regar de día en época de verano. Por el contrario, en caso de no exisitir restricción, la bomba se accionará normalmente. De no ser así, se entiende que es de noche y la bomba se accionará, por consiguiente regresaremos al estado inicial para reiniciar el proceso. Cabe recalcar que cuando sea de noche, no importará en que época se encuentre el sistema.
 
 Para entender de mejor manera, postulamos los siguientes ejemplos:
 ### -	Suponiendo que el depósito de agua está lleno, la tierra está seca, no es época de verano y es de día, la transición de estados se vería de la siguiente manera:
-- V --> R: Tanque de agua lleno.
-- R --> D: No es época de verano.
-- D --> S: Es de día.
-- S --> B: La tierra está seca. (Se activa la bomba de agua).
+- V --> S: Tanque de agua lleno.
+- S --> D: La tierra está seca.
+- D --> R: Es de día.
+- R --> V: No es época de verano. (Se activa la bomba de agua y se reinicia el proceso).
 
 ### -	Suponiendo que el depósito de agua está lleno, la tierra está seca, no es época de verano y es de noche, la transición de estados se vería de la siguiente manera:
-- V --> R: Tanque de agua lleno.
-- R --> D: No es época de verano.
-- D --> N: No es de día.
-- N --> S: Es de noche.
-- S --> B: La tierra está seca. (Se activa la bomba de agua).
+- V --> S: Tanque de agua lleno.
+- S --> D: La tierra está seca.
+- D --> V: Es de noche (Se activa la bomba de agua y se reinicia el proceso).
+
+En este caso no tiene relevancia la restricción.
 
 ### -	Suponiendo que el depósito de agua está lleno, la tierra está seca, es época de verano y es de día, la transición de estados se vería de la siguiente manera:
-- V --> R: Tanque de agua lleno.
-- R --> N: Es época de verano.
-- N --> R: No es de noche (Regresa al estado R para verificar si es época de verano o no). 
+- V --> S: Tanque de agua lleno.
+- S --> D: La tierra está seca.
+- D --> R: Es de día.
+- R --> D: Es época de verano. (No se activa la bomba de agua).
 
 ### -	Suponiendo que el depósito de agua está lleno, la tierra está seca, es época de verano y es de noche, la transición de estados se vería de la siguiente manera:
-- V --> R: Tanque de agua lleno.
-- R --> N: Es época de verano.
-- N --> S: Es de noche.
-- S --> B: La tierra está seca. (Se activa la boba de agua).
+- V --> S: Tanque de agua lleno.
+- S --> D: La tierra está seca.
+- D --> V: Es de noche (Se activa la bomba de agua y se reinicia el proceso).
+
+En este caso tampoco tiene relevancia la restricción.
 
 Finalmente presentamos a continuación la tabla de transiciones que describe todo el proceso explicado con el diagrama de estados realizado. 
 
 ![Tabla 1 5](https://user-images.githubusercontent.com/68835261/93070064-075d8580-f644-11ea-91e4-945785692f5f.JPG)
-![Tabla 1 6](https://user-images.githubusercontent.com/68835261/93070075-0af10c80-f644-11ea-992a-79cf18997c5b.JPG)
 
-# 7. DESCRIPCIÓ DE PRERREQUISITOS Y CONFIGURACIÓN
+# 7. DESCRIPCIÓN DE PRERREQUISITOS Y CONFIGURACIÓN
 En lo que corresponde a la utilización de aplicaciones secundarias para elaborar los diferentes grafos de estado, podemos decir que no se ha necesitado de ninguna que influya directamente sobre su implementación, ya que Creately ofrece una interfaz de desarrollo de diagramas muy extenso y completo. 
 
 Ahora bien, necesitamos saber cuales son los pasos para poder implementar diagramas de estados en Creately. Para lo cual, debemos:
@@ -286,6 +278,33 @@ El procedimiento que se llevó a cabo para representar e implementar el sistema 
 Por lo tanto, la función lógica implementada nos queda, tal como se observa en la sección derecha de la figura 1.7 
 ![Figura 1 7](https://user-images.githubusercontent.com/68835261/93070127-16dcce80-f644-11ea-82c4-917590d0329d.JPG)
 ![Figura 1 8](https://user-images.githubusercontent.com/68835261/93070133-1a705580-f644-11ea-8379-f49c43779e27.JPG)
+
+### Implementación de sistema de riego automático en un circuito secuencial
+Para implementar el sistema de riego en un circuito lógico secuencial, se necesita realizar una tabla de estados presentes y próximos (Tabla 1.8), basándonos en el diagrama de estados de la figura 1.5. con el fin de obtener los valores de J y K para cada flip flop que vayamos a utilizar. En este caso dos, ya que tenemos un total de 4 estados que pueden ser representados mediante combinaciones binarias de 2 bits, tal que:
+
+V: 00
+
+S: 01
+
+D: 10
+
+R: 11 
+
+Donde, el bit más significativo es Q_A y el menos significativo es Q_B.
+
+Entonces dependiendo del valor lógico de entrada, ocurrirán las diferentes transiciones entre estados, que a su vez implica la transición desde Q_A a Q_A^+ y desde Q_B a Q_B^+. De esta manera, obtendremos los valores de J_A, K_A (Primer flip flop) y J_B, K_B (Segundo flip flop).
+
+![Tabla 1 8](https://user-images.githubusercontent.com/68835261/93180761-3edc3880-f6fd-11ea-85bd-72dfbab1bdbd.JPG)
+
+Luego de obtener los valores de J y K de cada flip flop, procedemos a implementarlos en mapas de Karnaugh para obtener sus respectivas funciones lógicas. Lo mismo realizamos con la salida Y (Bomba de agua).
+
+![Figura 1 91](https://user-images.githubusercontent.com/68835261/93180706-2c61ff00-f6fd-11ea-8871-d77eca196da0.JPG)
+
+Finalmente implementamos las funciones lógicas obtenidas, con compuertas y los respectivos flip flops mediante el software de simulación Proteus, quedándonos de la siguiente manera:
+
+![Figura 2 1](https://user-images.githubusercontent.com/68835261/93180796-4a2f6400-f6fd-11ea-9641-d77e4da0169d.JPG)
+
+![Figura 2 2](https://user-images.githubusercontent.com/68835261/93180899-64694200-f6fd-11ea-93a8-927c424351f1.JPG)
 
 # 9. CONCLUSIONES
 -	Los diagramas de estado, para el primer y segundo ejercicio, se han diseñado, partiendo de la tabla de estados proporcionadas, mientras que en el tercer ejercicio se implementó la tabla de estados partiendo de un diagrama de estados. Toda su realización fue de gran importancia para aplicar el mismo principio en una máquina expendedora de bebidas y en un sistema de riego automático, donde cada uno de sus estados se representaron en base a los requerimientos de cada problema. Si nos damos cuenta, se utilizaron un total de 6 estados en los dos casos, cuyas transiciones, dependieron de la moneda que se inserte en la máquina expendedora y de las diferentes condiciones que se requerían para que la bomba de agua se active en el sistema de riego.
@@ -323,3 +342,9 @@ https://www.monografias.com/docs114/maquinas-estado/maquinas-estado.shtml
 ![7411](https://user-images.githubusercontent.com/68835261/93108843-f1b68300-f678-11ea-8e6a-7a349dfa197b.JPG)
 
 ![7432](https://user-images.githubusercontent.com/68835261/93108851-f3804680-f678-11ea-8fcb-88dd672bdac9.JPG)
+
+![7408](https://user-images.githubusercontent.com/68835261/93180638-17856b80-f6fd-11ea-83e7-0c75fb8bfee7.JPG)
+
+![7486](https://user-images.githubusercontent.com/68835261/93180647-1b18f280-f6fd-11ea-9edf-50e76a7e6aa7.jpg)
+
+![7473](https://user-images.githubusercontent.com/68835261/93180642-194f2f00-f6fd-11ea-8038-adc08b57c719.JPG)
