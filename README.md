@@ -128,10 +128,14 @@ Acá todos los estados posibles son representados con un círculo único. La acc
 
 ![Figura 1 1](https://user-images.githubusercontent.com/68835261/93069903-d0876f80-f643-11ea-9b59-ef8ceaf5e2db.JPG)
 
+![ES1](https://user-images.githubusercontent.com/68835261/93256605-2dc51300-f761-11ea-98c0-94bf09691cbc.JPG)
+
 ### 2.	Dibuje el diagrama de estados para la máquina de estado finito cuya tabla de estados es la siguiente. Partiendo del estado inicial s0, calcula la salida para la cadena de entrada abbccc
 ![Tabla 1 2](https://user-images.githubusercontent.com/68835261/93070035-fdd41d80-f643-11ea-9006-2dbeb73e50cd.JPG)
 
 ![Figura 1 2](https://user-images.githubusercontent.com/68835261/93069914-d3826000-f643-11ea-9dd0-e8d3109e18b3.JPG)
+
+![ES2](https://user-images.githubusercontent.com/68835261/93256615-31589a00-f761-11ea-92be-71f9875e4e51.JPG)
 
 ### 3.	Halle la tabla de estados para la máquina de estado finito cuyo diagrama de estados es:
 ![Figura 1 3](https://user-images.githubusercontent.com/68835261/93069919-d67d5080-f643-11ea-98b8-6928c7d0957a.JPG)
